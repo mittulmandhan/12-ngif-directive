@@ -12,13 +12,30 @@
 <!-- to do this we just need to use following syntax -->
 <!-- first of all angular will check if display is true then the element, to which the ngIf directive is attached, will be rendered -->
 <!-- if displayName is false then angular will check if there is  else statement.In this case else statement exists so the else block will be rendered -->
-<h2 *ngIf="displayName; else elseBlock">
-    Kidaa kaka?
-</h2>
+<!-- <h2 *ngIf="displayName; else elseBlock"> -->
+<!-- Kidaa kaka? -->
+<!-- </h2> -->
+
 <!-- we need to use a specific template to represent else block i.e. ng-template -->
 <!-- elseBlock is template reference variable pointing  if display name is set false then this block will be rendered -->
+<!-- <ng-template #elseBlock> -->
+<!-- <h2> -->
+<!-- this is else block -->
+<!-- </h2> -->
+<!-- </ng-template> -->
+
+<!-- now lets look at another syntax angular provides for ngIf directive -->
+<!-- if displayName contains true thenBlock will be rendered otherwise elseBlock will be rendered-->
+<div *ngIf="displayName; then thenBlock; else elseBlock"></div>
+
+<ng-template #thenBlock>
+    <h2>
+        This is if block
+    </h2>
+</ng-template>
+
 <ng-template #elseBlock>
     <h2>
-        this is else block
+        This is else block
     </h2>
 </ng-template>
