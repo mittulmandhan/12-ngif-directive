@@ -1,1 +1,24 @@
+<!--ngIf and ngswitch are the structural directives used to conditionally render HTML elements-->
+<h2 *ngIf="false">
+    kaisan baa?
+</h2>
 
+<!-- we can also assign a property -->
+<h2 *ngIf="displayName">
+    how are you?
+</h2>
+
+<!-- we can also use if else like other languages -->
+<!-- to do this we just need to use following syntax -->
+<!-- first of all angular will check if display is true then the element, to which the ngIf directive is attached, will be rendered -->
+<!-- if displayName is false then angular will check if there is  else statement.In this case else statement exists so the else block will be rendered -->
+<h2 *ngIf="displayName; else elseBlock">
+    Kidaa kaka?
+</h2>
+<!-- we need to use a specific template to represent else block i.e. ng-template -->
+<!-- elseBlock is template reference variable pointing  if display name is set false then this block will be rendered -->
+<ng-template #elseBlock>
+    <h2>
+        this is else block
+    </h2>
+</ng-template>
